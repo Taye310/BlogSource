@@ -21,6 +21,7 @@ high bias&high variance
 高方差-->更多的数据-->可能导致偏差变高-->高偏差  
 
 ## Regularization正则化
+
 为的是避免过拟合  
 L2 正则化 最常用 也被称为weight decay  
 L1 正则化  
@@ -44,4 +45,3 @@ normalizing training sets 为的是加速梯度下降算法，增加优化的步
 12.27  
 gradient checking 反向传递函数容易有bug又不易察觉，梯度检查就是检查导数算的对不对，可以增加对反向传递函数实现的正确性的信心  
 Debugging: Gradient Checking [参考资料](http://ufldl.stanford.edu/tutorial/supervised/DebuggingGradientChecking/)  
-  
