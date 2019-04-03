@@ -3,6 +3,7 @@ title: C++notebook
 date: 2019-02-18 09:06:46
 tags:
     - C++
+categories: 学习笔记
 ---
 
 [vector](http://www.cnblogs.com/Nonono-nw/p/3462183.html)：向量

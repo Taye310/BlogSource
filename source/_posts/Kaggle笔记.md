@@ -5,6 +5,7 @@ tags:
     - 数据分析
     - 数据可视化
     - Kaggle
+categories: 学习笔记
 ---
 
 # python数据分析、可视化相关笔记
