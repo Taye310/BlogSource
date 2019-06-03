@@ -1,10 +1,13 @@
 ---
-title: C++notebook
+title: C++&C# notebook
 date: 2019-02-18 09:06:46
 tags:
     - C++
+    - C#
 categories: 学习笔记
 ---
+
+# C++
 
 [vector](http://www.cnblogs.com/Nonono-nw/p/3462183.html)：向量
 ``` bash
@@ -55,3 +58,11 @@ for(auto i : nums){}
 unsigned 无符号的  
 
 [unordered_map](http://www.cplusplus.com/reference/unordered_map/unordered_map/?kw=unordered_map)
+
+
+# C#
+
+静态多态性：函数重载、运算符重载  
+动态多态性：抽象类和虚函数（抽象类和接口的区别：抽象类比接口更详细点，可以继承多个接口，但只能一个类）
+
+**正则表达式得看看todo**
