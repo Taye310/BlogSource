@@ -55,6 +55,12 @@ todo 结构分析 功能改进
 todo emmm
 
 ### 截图
-{% asset_img desktop.PNG pic1_desktop %}
+{% asset_img 1.png 游戏截图 %}
+{% asset_img 2.png 游戏截图 %}
+{% asset_img 3.png 游戏截图 %}
+{% asset_img 4.png 游戏截图 %}
+{% asset_img 5.png 游戏截图 %}
+{% asset_img 6.png 游戏截图 %}
+
 
 先写论文 写完在更

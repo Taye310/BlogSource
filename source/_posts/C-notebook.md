@@ -59,6 +59,29 @@ unsigned 无符号的
 
 [unordered_map](http://www.cplusplus.com/reference/unordered_map/unordered_map/?kw=unordered_map)
 
+C++ struct 构造函数附默认值的写法：
+``` bash
+struct student{
+    int age;
+    student *child;
+    bool sex;
+    int check;
+    student(int input):age(input),child(nullptr),sex(true),check(1996){}
+};
+
+int main(){
+    student a = student(18);
+    cout<<a.age<<a.sex<<a.check<<endl;
+    return 0;
+}
+```
+out
+``` bash
+1811996
+```
+
+把指针运算符 * 应用到 var 上是完全可以的，但修改 var 的值是非法的。这是因为 var 是一个指向数组开头的常量，不能作为左值。[C++](https://www.runoob.com/cplusplus/cpp-pointers-vs-arrays.html)  
+
 
 # C#
 
@@ -66,3 +89,20 @@ unsigned 无符号的
 动态多态性：抽象类和虚函数（抽象类和接口的区别：抽象类比接口更详细点，可以继承多个接口，但只能一个类）
 
 **正则表达式得看看todo**
+
+装饰器 attribute 方法前边直接加个函数的区别
+
+
+# Unity
+
+矩阵对应的几何变换 https://orangered3stones.iteye.com/blog/1940821
+对于N+1维坐标表示的理解 https://www.cnblogs.com/btgyoyo/p/7085264.html
+碰撞检测 http://www.jmecn.net/tutorial-for-beginners/chapter-15-collision-detection.html
+
+基于组件的引擎架构：  
+派生关系，通过继承父类获得父类的功能，这些通用功能为了能够为各种派生类提供服务，都必须实现到基类中  
+不再是父类中的接口，而变成子对象实例，为游戏对象提供服务  
+组合和继承的区别  
+gameobject都派生自object 为什么  
+coroutine 生命周期 c#的语法 反射 代理 设计模式 工厂 单例 装饰器 
+todo 设计模式 shader咋写
