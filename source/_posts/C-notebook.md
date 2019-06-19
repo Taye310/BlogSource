@@ -82,6 +82,11 @@ out
 
 把指针运算符 * 应用到 var 上是完全可以的，但修改 var 的值是非法的。这是因为 var 是一个指向数组开头的常量，不能作为左值。[C++](https://www.runoob.com/cplusplus/cpp-pointers-vs-arrays.html)  
 
+[变长数组](https://blog.csdn.net/fanyun_01/article/details/77430682) 普通数组到vector 一维到多维  
+
+模板：函数模板/类模板  
+
+内联函数（inline属于ret-type）：啥时候用，ret-type还包括哪些？
 
 # C#
 
@@ -95,8 +100,8 @@ out
 
 # Unity
 
-矩阵对应的几何变换 https://orangered3stones.iteye.com/blog/1940821
-对于N+1维坐标表示的理解 https://www.cnblogs.com/btgyoyo/p/7085264.html
+矩阵对应的几何变换 https://orangered3stones.iteye.com/blog/1940821  
+对于N+1维坐标表示的理解 https://www.cnblogs.com/btgyoyo/p/7085264.html  
 碰撞检测 http://www.jmecn.net/tutorial-for-beginners/chapter-15-collision-detection.html
 
 基于组件的引擎架构：  
@@ -104,5 +109,10 @@ out
 不再是父类中的接口，而变成子对象实例，为游戏对象提供服务  
 组合和继承的区别  
 gameobject都派生自object 为什么  
-coroutine 生命周期 c#的语法 反射 代理 设计模式 工厂 单例 装饰器 
-todo 设计模式 shader咋写
+coroutine 生命周期 c#的语法 反射 代理 设计模式 工厂 单例 装饰器  
+设计模式 shader
+
+# todo
+
+C++ 语法，算法，引擎：A*再来一遍，多线程，模板，迭代器，网络同步  
+Unity 网络Unet，Mirror
