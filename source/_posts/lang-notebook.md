@@ -1,5 +1,5 @@
 ---
-title: C++&C#/Unity notebook
+title: C++ & C#/Unity notebook
 date: 2019-02-18 09:06:46
 tags:
     - C++
@@ -107,6 +107,8 @@ new动态分配内存（只能new一个指针吗？不是），delete删除，de
 内联函数（inline属于ret-type）：啥时候用，ret-type还包括哪些？  
 
 **boost库**：准标准库
+
+`string::find("a")` 如果没有找到"a"，会返回一个固定的大数，且等于`string::npos` 的值
 
 # C#
 
