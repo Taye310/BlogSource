@@ -39,6 +39,10 @@ then if you call the CmdRecuestNewValues(); command you will update you values.
 ### 2020.2.14
 unity URP vs HDRP
 
+### 2020.2.19
+刷leetcode，首页整好看点！！！找个模板，后端用wordpress集成什么意思？？  
+域名备案终于下来咯
+
 **计划：**
 要不要直接换skynet - 需要Ubuntu环境
 
