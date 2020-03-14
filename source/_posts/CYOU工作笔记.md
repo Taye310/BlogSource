@@ -1,7 +1,7 @@
 ---
 title: CYOU学习笔记
 date: 2019-07-08 22:26:11
-password: 123
+password: 456654
 tags:
     - 工作笔记
     - 游戏开发
@@ -80,7 +80,7 @@ metatable:Lua 查找一个表元素时的规则，其实就是如下3个步骤:
 __newindex:当你给表的一个缺少的索引赋值，解释器就会查找__newindex 元方法：如果存在则调用这个函数而不进行赋值操作。   
 
 判断table是否为空的方法
-``` bash
+``` lua
 a={}
 if next(a) ~=nil then dosomething end
 ```   

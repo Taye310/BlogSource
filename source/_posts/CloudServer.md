@@ -12,6 +12,11 @@ tags:
 
 Mirror聊天室
 
+Mysql更改user的host地址：
+``` sql
+update user set host = '%' where user = 'root';
+```
+
 **日志：**
 ### 2020.2.10
 服务器win版本，客户端webgl，IIS部署成功
@@ -43,8 +48,58 @@ unity URP vs HDRP
 刷leetcode，首页整好看点！！！找个模板，后端用wordpress集成什么意思？？  
 域名备案终于下来咯
 
+### 2020.3.9
+ubuntu上不要用系统代理（更新conda包会报错未知sock版本），chrome用Omega插件，命令行用proxychain4  
+Skynet  
+腾讯云上想用skynet的话要用ubuntu  
+这样的话主页要换成nginx，不想装图形界面了，用共享文件夹samba远程写脚本，到linux下build  
+
+### 2020.3.10
+云服务器重装了ubuntu，用vscode remote development就可以远程调试，ssh添加了两对，一是新建的Home，二是github用的在.ssh里的一对  
+[samba配置教程](https://blog.csdn.net/qq_28719743/article/details/84872396)  
+传文件用sftp就好，局域网可以用samba
+
+### 2020.3.11
+``` nginx -s reload ```
+[conf](https://blog.csdn.net/WanJiaBaoBao/article/details/83349622)  
+Nginx location设置二级域名时 root下边要有这个名字的文件夹  
+``` bash
+server{
+        listen 80;     #1.你想让你的这个项目跑在哪个端口
+        server_name providencezhang.cn;     #2.当前服务器ip
+       	location / {
+        	root /home/ubuntu/ftp/www/home;     #3.dist文件的位置(我是直接放在home目录下了) 
+            # try_files $uri $uri/ /index.html;     #4.重定向,内部文件的指向(照写)
+        }
+		location /static {
+        	root /home/ubuntu/github/simpleweb;     #3.dist文件的位置(我是直接放在home目录下了) 
+            # try_files $uri $uri/ /index.html;     #4.重定向,内部文件的指向(照写)
+        }
+        location /api {  #4.当请求跨域时配置端口转发
+            proxy_pass http://175.24.57.128:8848/api; #5.转发地址
+        } 
+    }
+```
+
+### 2020.3.12
+用firewall-cmd开nginx的80端口
+
+### 2020.3.13
+最终目标：多人在线游戏，用dots  
+1. skynet源码  
+2. 简单demo跑通逻辑（登陆，心跳，消息机制）
+3. 客户端开发
+4. 前后端连接
+
+### 2020.3.14
+[git代理设置](https://echo.xuchaoji.com/index.php/archives/110/)
+
 **计划：**
-要不要直接换skynet - 需要Ubuntu环境
+要不要直接换skynet - 需要Ubuntu环境 √
+消息机制是不是可以自己实现一套，看skynet吧  
+
+xlua热更demo实现  
+C#这个attribute到底怎么用
 
 ## IIS_Index
 

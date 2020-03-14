@@ -11,6 +11,23 @@ categories: 学习笔记
 
 # C++
 
+unordered_map不能使用pair作为键值，需要提供pair的hash函数，map可以  
+
+hash_map与unordered_map: 前者使用一个下标范围比较大的数组来存储元素，形成很多的桶，利用hash函数对key进行映射到不同区域进行保存；
+后者记录元素的hash值，根据hash值判断元素是否相同。  
+速度上2最优其次hash_map最次map  
+
+&  （位   “与”）  and  
+^  （位   “异或”）  
+|  （位   “或”）   or  
+~  （位   “取反”）  
+
+位移运算符(<</>>)：乘以/除以$2^n$
+
+整型最大最小值：INT_MIN,INT_MAX
+
+map<>如果不赋初值，不是NULL是0
+
 [vector](http://www.cnblogs.com/Nonono-nw/p/3462183.html)：向量
 ``` bash
 #include <vector>;
@@ -111,6 +128,15 @@ new动态分配内存（只能new一个指针吗？不是），delete删除，de
 `string::find("a")` 如果没有找到"a"，会返回一个固定的大数，且等于`string::npos` 的值
 
 # C#
+
+Action与Func是特殊的delegate，用event修饰的delegate更加安全。  
+EventHandler就是一个已经声明出来的delegate  
+
+**where and new()**
+在C#中，泛型的使用非常广泛，为了泛型调用安全，经常需要对所使用的类型进行约束。  
+在对泛型的约束中，最常使用的关键字有where 和 new。  
+其中where关键字是约束所使用的泛型，该泛型必须是where后面的类，或者继承自该类。  
+new()说明所使用的泛型，必须具有无参构造函数，这是为了能够正确的初始化对象  
 
 静态多态性：函数重载、运算符重载  
 动态多态性：抽象类和虚函数（抽象类和接口的区别：抽象类比接口更详细点，可以继承多个接口，但只能一个类）
