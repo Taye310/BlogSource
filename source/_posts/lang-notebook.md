@@ -9,7 +9,31 @@ tags:
 categories: 学习笔记
 ---
 
-# C++
+# C/C++
+
+vector & list: 
+vector方便随机查询；扩容时因为它使用内存是连续的，会申请块更大的内存，造成整块内存的拷贝  
+list由双向链表实现，好增删，不好查询  
+
+[decltype](https://www.cnblogs.com/ghbjimmy/p/10636030.html):有时我们希望从表达式的类型推断出要定义的变量类型，但是不想用该表达式的值初始化变量（初始化可以用auto）。为了满足这一需求，C++11新标准引入了decltype类型说明符，它的作用是选择并返回操作数的数据类型，在此过程中，编译器分析表达式并得到它的类型，却不实际计算表达式的值。  
+
+``` C++
+int getSize();
+​
+int main(void)
+{
+    int tempA = 2;
+    
+    /*1.dclTempA为int.*/
+    decltype(tempA) dclTempA;
+    /*2.dclTempB为int，对于getSize根本没有定义，但是程序依旧正常，因为decltype只做分析，并不调用getSize().*/
+    decltype(getSize()) dclTempB;
+​
+    return 0;
+}
+```
+
+在C中，使用typedef定义struct在创建结构体是就不需要``` struct Student stu; ```了，直接使用typedef定义的别名例如S，``` S stu; ```
 
 unordered_map不能使用pair作为键值，需要提供pair的hash函数，map可以  
 
@@ -128,6 +152,8 @@ new动态分配内存（只能new一个指针吗？不是），delete删除，de
 `string::find("a")` 如果没有找到"a"，会返回一个固定的大数，且等于`string::npos` 的值
 
 # C#
+
+struct是值类型，内存分配在栈上；  
 
 Action与Func是特殊的delegate，用event修饰的delegate更加安全。  
 EventHandler就是一个已经声明出来的delegate  

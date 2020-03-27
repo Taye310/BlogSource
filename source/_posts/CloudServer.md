@@ -17,6 +17,22 @@ Mysql更改user的host地址：
 update user set host = '%' where user = 'root';
 ```
 
+## Home
+
+首页，vuejs/vant组件。怎么整怎么丑，还没想好加什么业务。
+
+## Blog
+
+blog.providencezhang.cn 解析到了 taye310.github.io  
+hexo + github pages只能提供静态页面，unity webgl需要网页服务器能解析.unityweb文件，在IIS上需要在mapping上单独设置，这个可能是导致不能在github pages上部署unity webgl项目的原因。
+
+**计划：**
+要不要直接换skynet - 需要Ubuntu环境 √
+消息机制是不是可以自己实现一套，看skynet吧  
+
+xlua热更demo实现  
+C#这个attribute到底怎么用
+
 **日志：**
 ### 2020.2.10
 服务器win版本，客户端webgl，IIS部署成功
@@ -60,7 +76,7 @@ Skynet
 传文件用sftp就好，局域网可以用samba
 
 ### 2020.3.11
-``` nginx -s reload ```
+``` nginx -s reload ```  
 [conf](https://blog.csdn.net/WanJiaBaoBao/article/details/83349622)  
 Nginx location设置二级域名时 root下边要有这个名字的文件夹  
 ``` bash
@@ -72,7 +88,7 @@ server{
             # try_files $uri $uri/ /index.html;     #4.重定向,内部文件的指向(照写)
         }
 		location /static {
-        	root /home/ubuntu/github/simpleweb;     #3.dist文件的位置(我是直接放在home目录下了) 
+        	alias /home/ubuntu/github/simpleweb;     #3.dist文件的位置(我是直接放在home目录下了) 
             # try_files $uri $uri/ /index.html;     #4.重定向,内部文件的指向(照写)
         }
         location /api {  #4.当请求跨域时配置端口转发
@@ -94,18 +110,10 @@ server{
 ### 2020.3.14
 [git代理设置](https://echo.xuchaoji.com/index.php/archives/110/)
 
-**计划：**
-要不要直接换skynet - 需要Ubuntu环境 √
-消息机制是不是可以自己实现一套，看skynet吧  
-
-xlua热更demo实现  
-C#这个attribute到底怎么用
-
-## IIS_Index
-
-首页，vuejs/vant组件。怎么整怎么丑，还没想好加什么业务。
-
-## Blog
-
-blog.providencezhang.cn解析到了taye310.github.io  
-hexo + github pages只能提供静态页面，unity webgl需要网页服务器能解析.unityweb文件，在IIS上需要在mapping上单独设置，这个可能是导致不能在github pages上部署unity webgl项目的原因。
+### 2020.3.26
+dots到webgl 会出现问题 [link](https://forum.unity.com/threads/bug-crash-with-a-fresh-project-on-ios-monopinvokecallback.827634/)  
+``` conf
+sudo nginx -t         # 测试配置是否成功
+sudo nginx -s reload  # 重启服务
+```
+xlua的热更到webgl有问题

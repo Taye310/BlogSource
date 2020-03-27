@@ -22,14 +22,6 @@ NEW:
 
 就是数据和逻辑分开了，这样cpu可以读到连续的内存，不需要每个GO来回在内存里跳
 
-### Note
-``` C#
-World.Active.EntityManager; // desperated
-World.DefaultGameObjectInjectionWorld.EntityManager; // use this
-
-typeof(RenderBounds); // make the mesh visable
-```
-
 ## DOTS
 DATA ORIENTED TECHNOLOGY STACK  
 三部分组成：
@@ -47,3 +39,20 @@ Universal render pipeline URP(LWRP)
 High definition render pipeline(HDRP)  
 
 Build-in renderer
+
+### Tutorial
+
+Quadrant System in Unity ECS (Find Target/Obstacle Avoidance/Boids)  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hP4Vu6JbzSo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+
+
+### Note
+``` C#
+World.Active.EntityManager; // desperated
+World.DefaultGameObjectInjectionWorld.EntityManager; // use this
+
+typeof(RenderBounds); // make the mesh visable
+```
+
+URP下需要用unlit/transparent材质  
+
