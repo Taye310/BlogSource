@@ -8,7 +8,15 @@ tags:
 
 # 云上项目
 
-## UnityWeb
+## Hotfix
+
+[xlua到webgl的坑](http://blog.okbase.net/unity3d/archive/56120.html)  
+
+``` lua
+xlua.hotfix
+```
+
+## ChatRoom
 
 Mirror聊天室
 
@@ -17,23 +25,30 @@ Mysql更改user的host地址：
 update user set host = '%' where user = 'root';
 ```
 
+改成linux之后要重新做server了  
+
 ## Home
 
-首页，vuejs/vant组件。怎么整怎么丑，还没想好加什么业务。
+http://providencezhang.cn  
+vuejs+node+nginx [link](https://segmentfault.com/a/1190000018099632)  
+[三者的关系](https://www.zhihu.com/question/294219455?sort=created)  
+简单来说，nginx可以反向代理多个node项目，做负载均衡等。如果没有服务端逻辑无需node，vuejs+nginx即可  
 
 ## Blog
 
 blog.providencezhang.cn 解析到了 taye310.github.io  
-hexo + github pages只能提供静态页面，unity webgl需要网页服务器能解析.unityweb文件，在IIS上需要在mapping上单独设置，这个可能是导致不能在github pages上部署unity webgl项目的原因。
+hexo + github pages只能提供静态页面，unity webgl需要网页服务器能解析.unityweb文件，在IIS上需要在mapping上单独设置（mimetype），这个可能是导致不能在github pages上部署unity webgl项目的原因。
 
-**计划：**
+## 计划
+
 要不要直接换skynet - 需要Ubuntu环境 √
 消息机制是不是可以自己实现一套，看skynet吧  
 
 xlua热更demo实现  
 C#这个attribute到底怎么用
 
-**日志：**
+## 日志
+
 ### 2020.2.10
 服务器win版本，客户端webgl，IIS部署成功
 

@@ -11,6 +11,62 @@ categories: 学习笔记
 
 # C/C++
 
+重载set的 oprater < 就可以使set内部按特殊要求有序 LFUCache
+
+全局对象的构造函数会[在 main 函数之前先运行](https://www.cnblogs.com/zpcoding/p/10805639.html)
+
+[extern与static](https://www.cnblogs.com/wh5313/archive/2012/06/12/2546112.html)：没有链接属性的标识符（none）总是被当做单独的个体，也就是说该标识符的多个声明被当做独立不同的实体。属于internal链接属性的标识符在同一个源文件内的所有声明中都指同一个实体，但位于不同源文件的多个声明则分属不同的实体。属于external链接属性的标识符不论声明多少次、位于几个源文件都表示同一个实体。  
+
+[定义与声明](https://www.cnblogs.com/damaohai/p/11497143.html)：区别在于是否分配空间（extern）  
+
+do...while(0)的作用：宏定义函数的时候解决“；”所带来的问题。宏跟函数的区别在于宏是把参数替换到指定位置（++a的例子），imgui中也有提到  
+
+C++类的内部可以定义引用数据成员，必须通过成员函数初始化列表初始化  
+
+const修饰的属性只能在构造函数里初始化，然后就不能用变量名改值了，但是可以直接控制变量所在的地址直接修改值  
+
+#pragma once：避免include重复引用一个文件  
+
+空类的sizeof为1：那是被编译器插进去的一个char ，使得这个知class的不同实体（object）在内存中配道置独一无二的回地址。
+
+类型安全很大程度上可以等价于内存安全，类型安全的代码不会试图访问自己没被授权的内存区域  
+
+``` delete p; ``` 实际意思是删除了p所指的目标（变量或对象），释放了它所占的堆空间，而不是删除p本身（指针p本身并没有撤销，它自己仍然存在，该指针所占内存空间并未释放，指针p的真正释放是随着函数调用的结束而消失），释放堆空间后，p成了"空指针"。如果我们在delete p后没有进行指针p的制空（p=NULL)的话，其实指针p这时会成为野指针，为了使用的安全，我们一般在delete p之后还会加上p=NULL这一语句  
+
+包含纯虚函数的基类可定义指向派生类对象的基类指针和派生类对象的引用，不能直接定义自身对象  
+
+[print输出格式控制](https://blog.csdn.net/qq_37059136/article/details/80841675)
+
+vecotr的at和[]: v是个空集合的情况下，[]访问是行为未定义的，at访问则会抛出std::out_of_range异常。c++标准不要求vector<T>::operator[]进行下标越界检查，原因是为了效率，总是强制下标越界检查会增加程序的性能开销。设计vector是用来代替内置数组的，所以效率问题也应该考虑。  
+
+unique_ptr是智能指针的一种  
+
+comptr和unique_ptr的区别：  
+
+``` C++
+auto_ptr<string> aps(new string("abd"));
+	auto_ptr<string> aps2;
+	aps2 = aps;
+	cout << *aps << endl;//报错 此时aps已经失去对string内存的所有权，如果是两个普通指针，则没有问题
+	cout << *aps2 << endl;
+```
+
+implicit conversion/explicit conversion:
+
+#pragma comment ( lib,"wpcap.lib" )  
+表示链接wpcap.lib这个库。和在工程设置里写上链入wpcap.lib的效果一样（两种方式等价，或说一个隐式一个显式调用），不过这种方法写的 程序别人在使用你的代码的时候就不用再设置工程settings了。告诉连接器连接的时候要找ws2_32.lib，这样你就不用在linker的lib设置里指定这个lib了。  
+
+C++的钻石继承：dreaded diamond：  
+
+函数声明后边的const：const的函数不能对其数据成员进行修改操作。const的对象，不能引用非const的成员函数。  
+
+noexcept：该关键字告诉编译器，函数中不会发生异常,这有利于编译器对程序做更多的优化。  
+如果在运行时，noexecpt函数向外抛出了异常（如果函数内部捕捉了异常并完成处理，这种情况不算抛出异常），程序会直接终止，调用std::terminate()函数，该函数内部会调用std::abort()终止程序。  
+
+[class和struct的区别](https://zhidao.baidu.com/question/748004411503788052.html)：最根本的引用类型和值类型
+
+volatile: A volatile specifier is a hint to a compiler that an object may change its value in ways not specified by the language so that aggressive optimizations must be avoided.
+
 vector & list: 
 vector方便随机查询；扩容时因为它使用内存是连续的，会申请块更大的内存，造成整块内存的拷贝  
 list由双向链表实现，好增删，不好查询  
@@ -152,6 +208,8 @@ new动态分配内存（只能new一个指针吗？不是），delete删除，de
 `string::find("a")` 如果没有找到"a"，会返回一个固定的大数，且等于`string::npos` 的值
 
 # C#
+
+[C#嵌套类型](https://www.cnblogs.com/rinack/p/5695610.html)：类里声明类。  
 
 struct是值类型，内存分配在栈上；  
 
