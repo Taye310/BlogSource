@@ -11,6 +11,8 @@ categories: 学习笔记
 
 # C/C++
 
+[右值引用与move()\forward()函数](https://blog.csdn.net/coolmeme/article/details/44459999)：std::move执行一个无条件的转化到右值，更像是"rvalue_cast<T>"；std::forward把其参数转换为右值，仅仅在那个参数被绑定到一个右值时；右值引用的目的是减少数据拷贝，提升性能  
+
 [虚继承](http://c.biancheng.net/view/2280.html)：解决菱形继承问题  
 
 在C++中，内存分成5个区，他们分别是堆、栈、自由存储区、全局/静态存储区和常量存储区  
@@ -23,7 +25,7 @@ categories: 学习笔记
 
 [头文件声明static变量，多个文件include该头文件](https://bbs.csdn.net/topics/390720572)，会导致每个文件都有一个专属的static变量  
 
-const的物理常量性和逻辑常量性：物理常量性就是const对象不能改变，但是可以```*a.ptr=anything;```，逻辑常量性用```mutable```关键字保证  
+const的物理常量性和逻辑常量性：物理常量性就是const对象不能改变，但是可以```*a.ptr=anything;```，逻辑常量性用```mutable```关键字保证，mutable的成员变量在const成员函数中也是可以改变的  
 
 constexpr：constexpr所修饰的变量一定是编译期可求值的，runtime的时候不能赋值，不然会报错，所修饰的函数在其所有参数都是constexpr时，一定会返回constexpr。  
 

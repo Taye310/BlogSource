@@ -103,7 +103,25 @@ void FileStreamLoadTexture()
 # part 3 C#中的async和await
 
 属于System.Threading.Task，async/await Task是C#中更先进的，也是微软大力推广的特性，我们在开发中可以尝试使用Task来替代Thread/ThreadPool，处理本地IO和网络IO任务是尽量使用async/await来提高任务执行效率。  
-await后边是个异步方法，也就是说async自定义的异步方法中有一个或者多个await，每个await后边还是一个返回值为Task<T>或者Task或者void的异步方法，最底层这个异步方法往往来自BCL（C#的基础类库，例如WebClient.DownloadStringTaskAsync(url)）  
+await后边是个异步方法，也就是说async自定义的异步方法中有一个或者多个await，每个await后边还是一个返回值为
+* Task\<T>（返回值为T类型）
+* Task（没有返回值，但是可以查看异步调用的状态）
+* void（调用完就不关心了，没有互动了）的异步方法
+
+最底层这个异步方法往往来自BCL（C#的基础类库，例如WebClient.DownloadStringTaskAsync(url)）  
+
+``` C#
+async Task<int> CountCharactersAsync(int id, string site){
+    Console.WriteLine("starting countingcharacters");
+    WebClient wc = new WebClient();
+
+    string result = await wc.DownloadStringTaskAsync(new Uri(site));
+
+    Console.WriteLine("countingcharacters completed");
+    return result.Length;
+}
+```
+
 20.3.5 Wait()/WaitAll()/WaitAny()  
 20.10 BeginInvoke()和EndInvoke()  
 ——《C#图解教程》
