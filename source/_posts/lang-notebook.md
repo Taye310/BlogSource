@@ -11,6 +11,8 @@ categories: 学习笔记
 
 # C/C++
 
+[Why can’t I separate the definition of my templates class from its declaration and put it inside a .cpp file?](https://isocpp.org/wiki/faq/templates#templates-defn-vs-decl)
+
 [右值引用与move()\forward()函数](https://blog.csdn.net/coolmeme/article/details/44459999)：std::move执行一个无条件的转化到右值，更像是"rvalue_cast<T>"；std::forward把其参数转换为右值，仅仅在那个参数被绑定到一个右值时；右值引用的目的是减少数据拷贝，提升性能  
 
 [虚继承](http://c.biancheng.net/view/2280.html)：解决菱形继承问题  
