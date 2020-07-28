@@ -82,9 +82,14 @@ M：旋转缩放；t：平移（如果坐标点或向量是行向量，t的位�
 
 ## 光照模型
 
-* BRDF（bidirectional reflection distribution function）又称经验模型
-* 标准光照模型（Phong）：自发光，高光反射，漫反射，环境光（需要入射光，反射光，表面法线，视角方向）
-* blinn-phong：与phong相比不需要计算反射方向，取而代之的是视角和入射光线的平均值归一化后的结果
+* BRDF（bidirectional reflection distribution function）
+* BRDF经验模型（能量不守恒，简化的数学公式）：
+  * Lambert：反射强度不受角度影响，反射角度受平面影响
+  * 标准光照模型（Phong）：自发光，高光反射，漫反射，环境光（需要入射光，反射光，表面法线，视角方向）
+  * blinn-phong：与phong相比不需要计算反射方向，取而代之的是视角和入射光线的平均值归一化后的结果
+* 基于物理的BRDF模型（判断条件：是否满足交换律，即光路可逆；是否能量守恒）：
+  * cook-torrance BRDF：微面元模型用来表示pbs（physical based shading）中的高光，D是法线分布函数，G是阴影遮蔽函数，F是菲涅尔反射函数
+  * ward BRDF
 
 实现细节：
 * 漫反射符合兰伯特定律，即反射光线强度与表面法线和光源方向之间夹角的余弦值成正比  
