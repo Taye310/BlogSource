@@ -39,6 +39,8 @@ constexpr：constexpr所修饰的变量一定是编译期可求值的，runtime�
 
 [extern与static](https://www.cnblogs.com/wh5313/archive/2012/06/12/2546112.html)：没有链接属性的标识符（none）总是被当做单独的个体，也就是说该标识符的多个声明被当做独立不同的实体。属于internal链接属性的标识符在同一个源文件内的所有声明中都指同一个实体，但位于不同源文件的多个声明则分属不同的实体。属于external链接属性的标识符不论声明多少次、位于几个源文件都表示同一个实体。  
 
+[static变量初始化的问题](https://www.cnblogs.com/weizhixiang/articles/5771501.html)：类成员的static变量要在代码块外初始化，否则要加const  
+
 [定义与声明](https://www.cnblogs.com/damaohai/p/11497143.html)：区别在于是否分配空间（extern）  
 
 do...while(0)的作用：宏定义函数的时候解决“；”所带来的问题。宏跟函数的区别在于宏是把参数替换到指定位置（++a的例子），imgui中也有提到  
@@ -59,7 +61,7 @@ const修饰的属性只能在构造函数里初始化，然后就不能用变量
 
 [print输出格式控制](https://blog.csdn.net/qq_37059136/article/details/80841675)
 
-vecotr的at和[]: v是个空集合的情况下，[]访问是行为未定义的，at访问则会抛出std::out_of_range异常。c++标准不要求vector<T>::operator[]进行下标越界检查，原因是为了效率，总是强制下标越界检查会增加程序的性能开销。设计vector是用来代替内置数组的，所以效率问题也应该考虑。  
+vecotr的at和[]: v是个空集合的情况下，```[]```访问是行为未定义的，at访问则会抛出std::out_of_range异常。c++标准不要求vector<T>::operator```[]```进行下标越界检查，原因是为了效率，总是强制下标越界检查会增加程序的性能开销。设计vector是用来代替内置数组的，所以效率问题也应该考虑。  
 
 unique_ptr是智能指针的一种  
 
@@ -223,8 +225,9 @@ new动态分配内存（只能new一个指针吗？不是），delete删除，de
 
 模板：函数模板/类模板  
 
-内联函数（inline属于ret-type）：啥时候用，ret-type还包括哪些？  
-减少了函数调用，但是增加目标代码的大小
+[内联函数](https://www.jianshu.com/p/a57a7884d6e8)（inline属于ret-type）：啥时候用，ret-type还包括哪些？  
+减少了函数调用，避免由函数调用带来的栈内存消耗，但是增加目标代码的大小；  
+成员函数声明和实现写一起默认就是内联的，实现写外边就得手动加inline  
 
 **boost库**：准标准库
 

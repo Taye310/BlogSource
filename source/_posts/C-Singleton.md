@@ -5,6 +5,7 @@ tags:
     - 设计模式
     - C++
     - 单例模式
+    - 命令模式
 ---
 
 # 1.单例模式
@@ -67,6 +68,66 @@ Singleton* Singleton::instance = new Singleton(); // 最开始就初始化实例
 int main() {
 	Singleton* ins = Singleton::GetInstance();
 	ins->func();
+	return 0;
+}
+```
+
+
+# 2.命令模式
+
+``` C++
+class Command
+{
+public:
+	string name;
+	virtual void Execute() {
+		cout << "execute:" << name << endl;
+	}
+
+	void Recall() {
+		cout << "recall:" << name << endl;
+	}
+};
+
+class AddCommand : public Command {
+public:
+	virtual void Execute() {
+		cout << "addcommand execute" << endl;
+	}
+
+	void Recall() {
+		cout << "addcommand recall" << endl;
+	}
+};
+
+class CommandManager {
+public:
+	void Do(Command c) {
+		c.Execute();
+		if (dq.size() == capacity) dq.pop_front();
+		dq.push_back(c);
+	}
+
+	void Undo() {
+		Command tmp = dq.back();
+		tmp.Recall();
+		dq.pop_back();
+	}
+
+	void Redo() {
+
+	}
+private:
+	int capacity = 10;
+	deque<Command> dq;
+};
+
+
+int main() {
+	Command* cp = new AddCommand();
+	cp->name = "ac";
+	cp->Execute();
+	cp->Recall();
 	return 0;
 }
 ```

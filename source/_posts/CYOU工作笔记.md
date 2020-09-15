@@ -303,7 +303,7 @@ ACGAskHeroTrialsSeckill     扫荡
 waitforpacket/withheartbeat//socket.error: [Errno 10053] 
 这能都改成waitforpacket吗？？？  
 不用改成waitforpacket，问题出在
-``` bash
+``` python
 self.person['nNextLevelId_current'] = self.person['nNextLevelId'] # 写反成
 self.person['nNextLevelId'] = self.person['nNextLevelId_current'] # 了
 ```

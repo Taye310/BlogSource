@@ -14,7 +14,7 @@ tags:
 
 ## 智能指针
 
-### shared_ptr
+### SharedPtr ver1
 
 ``` C++
 // mysharedptr.h
@@ -96,3 +96,82 @@ int MySharedPtr<T>::use_count() {
 }
 ```
 类模板的声明和定义应该放在一起，这里是不放在一起的写法
+
+
+### SharedPtr ver2
+
+``` C++
+template<class T>
+class SharedPtr
+{
+public:
+	SharedPtr();
+    SharedPtr(T* p);
+    SharedPtr(SharedPtr& sp);
+	~SharedPtr();
+
+    SharedPtr& operator= (const SharedPtr& sp);
+    int use_count();
+
+private:
+    T* p;
+    int* refCount;
+};
+
+template<class T>
+SharedPtr<T>::SharedPtr():p(nullptr),refCount(new int(0))
+{
+}
+
+template<class T>
+SharedPtr<T>::SharedPtr(T* _p) : p(_p), refCount(new int(1))
+{
+}
+
+template<class T>
+SharedPtr<T>::SharedPtr(SharedPtr& sp) : p(sp.p), refCount(&(++*(sp.refCount)))
+{
+}
+
+template<class T>
+SharedPtr<T>::~SharedPtr()
+{
+    if (p && --*refCount == 0) {
+        delete p;
+        delete refCount;
+    }
+}
+
+template<class T>
+SharedPtr<T>& SharedPtr<T>::operator= (const SharedPtr& other) {
+    if (this == &other)
+        return *this;
+
+    ++* other.refCount;
+    if (-- * refCount == 0) {
+        delete p;
+        delete refCount;
+    }
+
+    p = other.p;
+    refCount = other.refCount;
+    return *this;
+}
+
+template<class T>
+int SharedPtr<T>::use_count(){
+    return *refCount;
+}
+
+
+int main() {
+    int* p = new int(3);
+    SharedPtr<int> sp(p);
+    SharedPtr<int> ssp(p);
+    SharedPtr<int> sssp(sp);
+    cout << sp.use_count() << " " << ssp.use_count() << " " << sssp.use_count() << endl;
+	// output: 2 1 2
+    return 0;
+}
+
+```

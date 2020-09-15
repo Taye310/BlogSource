@@ -132,3 +132,18 @@ sudo nginx -t         # 测试配置是否成功
 sudo nginx -s reload  # 重启服务
 ```
 xlua的热更到webgl有问题
+
+### 2020.9.15
+做games-cn的作业需要图形界面，用vnc+xfce  
+
+连接不到server：原因是防火墙策略  
+> 保存防火墙规则命令：iptables-save > /opt/iprules_all.txt
+> 清除策略iptables -F
+> 后续需要恢复原本的防火墙策略，通过如下命令恢复：iptables-restore < /opt/iprules_all.txt
+
+vncviewer登录后显示叉：~/.vnc/xstartup配置文件有问题（权限或者内容），查看vnc log解决  
+
+常用命令：  
+> ps -ef|grep vnc
+> vncserver -kill :1
+> vncserver :1
