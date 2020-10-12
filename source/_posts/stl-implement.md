@@ -1,9 +1,11 @@
 ---
-title: stl-implement
+title: stl-implements && code practices
 date: 2020-07-06 11:13:02
 tags:
     - stl
     - C/C++
+    - 智能指针
+    - 多线程
 ---
 
 # 自己实现部分STL（Standard Template Library）
@@ -175,3 +177,8 @@ int main() {
 }
 
 ```
+
+
+## C++11多线程
+
+[参考资料](https://www.cnblogs.com/DOMLX/p/10945309.html)
