@@ -11,9 +11,44 @@ categories: 学习笔记
 
 # C/C++
 
-extern 'C':
+[可变参数：](https://www.runoob.com/cprogramming/c-variable-arguments.html)  
+``` C++
+#include <stdio.h>
+#include <stdarg.h>
+ 
+double average(int num,...)
+{
+ 
+    va_list valist;
+    double sum = 0.0;
+    int i;
+ 
+    /* 为 num 个参数初始化 valist */
+    va_start(valist, num);
+ 
+    /* 访问所有赋给 valist 的参数 */
+    for (i = 0; i < num; i++)
+    {
+       sum += va_arg(valist, int);
+    }
+    /* 清理为 valist 保留的内存 */
+    va_end(valist);
+ 
+    return sum/num;
+}
+ 
+int main()
+{
+   printf("Average of 2, 3, 4, 5 = %f\n", average(4, 2,3,4,5));
+   printf("Average of 5, 10, 15 = %f\n", average(3, 5,10,15));
+}
+```
 
-C++是如何处理异常的：
+__cdecl, __fastcall, __stdcall:   
+
+extern 'C':  
+
+C++是如何处理异常的：  
 
 [Why can’t I separate the definition of my templates class from its declaration and put it inside a .cpp file?](https://isocpp.org/wiki/faq/templates#templates-defn-vs-decl)
 
