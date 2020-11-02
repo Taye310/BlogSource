@@ -182,3 +182,5 @@ int main() {
 ## C++11多线程
 
 [参考资料](https://www.cnblogs.com/DOMLX/p/10945309.html)
+[参考资料2](https://zhuanlan.zhihu.com/p/77999255)
+[参考资料3](https://www.jianshu.com/u/88ad4f76eb79)
