@@ -5,7 +5,7 @@ tags:
     - Unity
     - FPS
     - Sandbox
-categories: 项目
+categories: 个人项目
 ---
 
 ### 游戏功能（技术实现）
